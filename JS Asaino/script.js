@@ -1,4 +1,3 @@
-// ------------------------hamburger-menu--------------
 const hamMenu = document.querySelector("#open-nav-menu");
 const offScreenMenu = document.querySelector(".wrapper");
 const closeMenuButton = document.querySelector("#close-nav-menu");
@@ -14,7 +13,6 @@ closeMenuButton.addEventListener("click", () => {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Update greeting based on time of day
     const greetingElement = document.getElementById("greeting");
     const hours = new Date().getHours();
     let greeting;
@@ -28,10 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   
     greetingElement.textContent = greeting;
-  
-    // Fetch weather information (using a placeholder function)
     function fetchWeather() {
-      // Simulate fetching weather data
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve({
@@ -46,8 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
     fetchWeather().then((data) => {
       weatherElement.textContent = `Current temperature: ${data.temperature}°C, Condition: ${data.condition}`;
     });
-  
-    // Handle temperature unit toggle
     const celsiusRadio = document.getElementById("celsius");
     const fahrRadio = document.getElementById("fahr");
   
@@ -69,19 +62,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function updateTime() {
     const now = new Date();
-  
-    // Extract hours, minutes, and seconds
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const seconds = now.getSeconds().toString().padStart(2, '0');
-  
-    // Update the HTML elements
     document.querySelector('[data-time="hours"]').textContent = hours;
     document.querySelector('[data-time="minutes"]').textContent = minutes;
     document.querySelector('[data-time="seconds"]').textContent = seconds;
   }
-  
-  // Update the time immediately and then every second
   updateTime();
   setInterval(updateTime, 1000);
 
@@ -154,12 +141,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Set the current year
   const yearSpan = document.getElementById("year");
   const currentYear = new Date().getFullYear();
   yearSpan.textContent = currentYear;
-
-  // Smooth scroll to top
   const scrollToTopButton = document.getElementById("scrollToTop");
   scrollToTopButton.addEventListener("click", function() {
     window.scrollTo({
